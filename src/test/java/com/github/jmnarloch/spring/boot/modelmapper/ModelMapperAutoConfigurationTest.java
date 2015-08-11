@@ -21,8 +21,15 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
+
+import java.util.List;
+
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 /**
  * Tests the registration of {@link ModelMapper}.
@@ -36,14 +43,29 @@ public class ModelMapperAutoConfigurationTest {
     @Autowired
     private ModelMapper modelMapper;
 
+    @Autowired
+    private List<ModelMapperConfigurer> configurers;
+
     @Test
     public void shouldInstantiateMapper() {
 
         Assert.notNull(modelMapper, "Model mapper hasn't been created.");
     }
 
+    @Test
+    public void shouldInvokeConfigurer() {
+
+        for(ModelMapperConfigurer configurer : configurers) {
+            verify(configurer).configure(any(ModelMapper.class));
+        }
+    }
+
     @SpringBootApplication
     public static class Application {
 
+        @Bean
+        public ModelMapperConfigurer modelMapperConfigurer() {
+            return mock(ModelMapperConfigurer.class);
+        }
     }
 }
