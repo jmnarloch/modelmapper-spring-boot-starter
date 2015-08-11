@@ -1,0 +1,52 @@
+plugins {
+    id "com.github.hierynomus.license" version "0.11.0"
+    id 'net.researchgate.release' version '2.1.2'
+}
+
+apply plugin: 'java'
+apply plugin: "jacoco"
+apply plugin: 'idea'
+
+apply from: 'libraries.gradle'
+apply from: 'gradle/license.gradle'
+apply from: 'gradle/release.gradle'
+
+apply plugin: 'findbugs'
+apply plugin: 'pmd'
+
+sourceCompatibility = 1.7
+
+group = "com.github.jmnarloch"
+archivesBaseName="spring-boot-starter-modelmapper"
+
+ext {
+    isReleaseVersion = !version.endsWith("SNAPSHOT")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6'
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Spring Boot Starter for ModelMapper',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+
+    compile (libraries.springBoot)
+
+    testCompile (libraries.springTest)
+    testCompile (libraries.junit)
+    testCompile (libraries.mockito)
+}
+
+findbugs {
+    ignoreFailures = true
+}

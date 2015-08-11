@@ -1,7 +1,11 @@
 package com.github.jmnarloch.spring.boot.modelmapper;
 
+import org.springframework.context.annotation.Configuration;
+
 /**
- * Created by jakubnarloch on 11.08.15.
+ *
+ * @author Jakub Narloch
  */
+@Configuration
 public class ModelMapperAutoConfiguration {
 }
