@@ -10,7 +10,7 @@ Registers the ModelMapper as a Spring bean and allows to configure it and regist
 
 ## Setup
 
-In order to add  to your project simply add this dependency to your classpath:
+In order to add ModelMapper to your project simply add this dependency to your classpath:
 
 ```xml
 <dependency>
