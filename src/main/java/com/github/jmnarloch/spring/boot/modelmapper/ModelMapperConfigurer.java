@@ -21,7 +21,6 @@ import org.modelmapper.ModelMapper;
  * Allows to set specific behaviour of the {@link ModelMapper} instance. The concrete implementation of this interface
  * needs to be registered within the application context in order to be processed.
  *
- * <code>
  * <pre><strong>Example:</strong>
  * &#064;Component
  * public class UserMapping implements ModelMapperConfigurer {
@@ -33,7 +32,6 @@ import org.modelmapper.ModelMapper;
  *      }
  * }
  * </pre>
- * </code>
  *
  * @author Jakub Narloch
  * @see ModelMapper
