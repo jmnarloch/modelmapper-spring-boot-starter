@@ -49,7 +49,7 @@ Similarly registering the mapping can be performed through extending `PropertyMa
 public class UserDtoMapping extends PropertyMapConfigurerSupport<User, UserDto> {
 
    @Override
-   protected PropertyMap<User, UserDto> propertyMap() {
+   public PropertyMap<User, UserDto> mapping() {
 
        return new PropertyMap<User, UserDto>() {
            @Override
