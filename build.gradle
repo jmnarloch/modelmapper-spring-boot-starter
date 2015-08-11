@@ -41,8 +41,9 @@ repositories {
 dependencies {
 
     compile (libraries.springBoot)
+    compile (libraries.modelMapper)
 
-    testCompile (libraries.springTest)
+    testCompile (libraries.springBootTest)
     testCompile (libraries.junit)
     testCompile (libraries.mockito)
 }
