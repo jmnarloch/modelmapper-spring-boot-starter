@@ -35,7 +35,7 @@ public class ModelMapperFactoryBean implements FactoryBean<ModelMapper> {
     private static final Class<ModelMapper> MODEL_MAPPER_CLASS = ModelMapper.class;
 
     /**
-     * The list of configurers used for customizig the behaviour of the model mapper.
+     * The list of configurers used for customizing the behaviour of the model mapper.
      */
     @Autowired(required = false)
     private List<ModelMapperConfigurer> configurers;
