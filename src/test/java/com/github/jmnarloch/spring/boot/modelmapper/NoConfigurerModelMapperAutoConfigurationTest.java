@@ -21,14 +21,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.List;
-
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 import static org.springframework.util.Assert.notNull;
 
 /**
@@ -37,35 +31,20 @@ import static org.springframework.util.Assert.notNull;
  * @author Jakub Narloch
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = ModelMapperAutoConfigurationTest.Application.class)
-public class ModelMapperAutoConfigurationTest {
+@SpringApplicationConfiguration(classes = NoConfigurerModelMapperAutoConfigurationTest.Application.class)
+public class NoConfigurerModelMapperAutoConfigurationTest {
 
     @Autowired
     private ModelMapper modelMapper;
 
-    @Autowired
-    private List<ModelMapperConfigurer> configurers;
-
     @Test
-    public void shouldInstantiateMapper() {
+    public void shouldInstantiateMapperWithoutAnyConfigurer() {
 
         notNull(modelMapper, "Model mapper hasn't been created.");
-    }
-
-    @Test
-    public void shouldInvokeConfigurer() {
-
-        for(ModelMapperConfigurer configurer : configurers) {
-            verify(configurer).configure(any(ModelMapper.class));
-        }
     }
 
     @EnableAutoConfiguration
     public static class Application {
 
-        @Bean
-        public ModelMapperConfigurer modelMapperConfigurer() {
-            return mock(ModelMapperConfigurer.class);
-        }
     }
 }
