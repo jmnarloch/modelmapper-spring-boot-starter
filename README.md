@@ -16,7 +16,7 @@ In order to add ModelMapper to your project simply add this dependency to your c
 <dependency>
     <groupId>com.github.jmnarloch</groupId>
     <artifactId>modelmapper-spring-boot-starter</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
