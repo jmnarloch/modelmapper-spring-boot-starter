@@ -37,7 +37,8 @@ public abstract class PropertyMapConfigurerSupport<S, D> implements ModelMapperC
     public abstract PropertyMap<S, D> mapping();
 
     /**
-     * Configures
+     * Configures the passed {@link ModelMapper} instance by registering the {@link PropertyMap} defined by
+     * {@link #mapping()} method.
      *
      * @param modelMapper {@link ModelMapper} instance to be configured
      */
