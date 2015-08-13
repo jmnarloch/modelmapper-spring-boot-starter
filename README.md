@@ -2,7 +2,7 @@
 
 > A Spring Boot starter that will help you configure [ModelMapper](http://modelmapper.org) within the application context. 
 
-[![Build Status](https://travis-ci.org/jmnarloch/spring-boot-starter-modelmapper.svg?branch=master)](https://travis-ci.org/jmnarloch/spring-boot-starter-modelmapper)
+[![Build Status](https://travis-ci.org/jmnarloch/modelmapper-spring-boot-starter.svg?branch=master)](https://travis-ci.org/jmnarloch/modelmapper-spring-boot-starter)
 
 ## Features
 
@@ -15,7 +15,7 @@ In order to add ModelMapper to your project simply add this dependency to your c
 ```xml
 <dependency>
     <groupId>com.github.jmnarloch</groupId>
-    <artifactId>spring-boot-starter-modelmapper</artifactId>
+    <artifactId>modelmapper-spring-boot-starter</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```

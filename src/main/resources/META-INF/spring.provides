@@ -1,1 +1,1 @@
-provides: spring-boot-starter-modelmapper,modelmapper
+provides: modelmapper-spring-boot-starter,modelmapper

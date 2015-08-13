@@ -38,12 +38,12 @@ uploadArchives {
                 name 'Spring Boot Starter ModelMapper'
                 packaging 'jar'
                 description 'Spring Boot starter for ModelMapper'
-                url 'https://github.com/jmnarloch/spring-boot-starter-modelmapper'
+                url 'https://github.com/jmnarloch/modelmapper-spring-boot-starter'
 
                 scm {
-                    connection 'scm:git:https://github.com/jmnarloch/spring-boot-starter-modelmapper.git'
-                    developerConnection 'scm:git:https://github.com/jmnarloch/spring-boot-starter-modelmapper.git'
-                    url 'https://github.com/jmnarloch/spring-boot-starter-modelmapper.git'
+                    connection 'scm:git:https://github.com/jmnarloch/modelmapper-spring-boot-starter.git'
+                    developerConnection 'scm:git:https://github.com/jmnarloch/modelmapper-spring-boot-starter.git'
+                    url 'https://github.com/jmnarloch/modelmapper-spring-boot-starter.git'
                 }
 
                 licenses {
