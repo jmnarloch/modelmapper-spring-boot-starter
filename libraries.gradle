@@ -4,7 +4,7 @@ ext {
             springBoot : 'org.springframework.boot:spring-boot-starter:1.2.5.RELEASE',
             springBootTest : 'org.springframework.boot:spring-boot-starter-test:1.2.5.RELEASE',
 
-            modelMapper : 'org.modelmapper:modelmapper:0.7.4',
+            modelMapper : 'org.modelmapper:modelmapper:0.7.5',
 
             junit        : 'junit:junit:4.12',
             mockito      : 'org.mockito:mockito-all:1.10.19'
