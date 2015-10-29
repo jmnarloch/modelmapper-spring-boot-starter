@@ -7,6 +7,7 @@ buildscript {
 plugins {
     id "com.github.hierynomus.license" version "0.11.0"
     id 'net.researchgate.release' version '2.1.2'
+    id 'com.github.kt3k.coveralls' version '2.4.0'
 }
 
 apply plugin: 'java'
@@ -19,6 +20,8 @@ apply from: 'gradle/release.gradle'
 
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
+
+apply plugin: 'com.github.kt3k.coveralls'
 
 sourceCompatibility = 1.7
 
@@ -42,7 +45,6 @@ jar {
 
 repositories {
     jcenter()
-    mavenCentral()
 }
 
 compileJava {
@@ -61,4 +63,11 @@ dependencies {
 
 findbugs {
     ignoreFailures = true
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
 }

@@ -3,6 +3,7 @@
 > A Spring Boot starter that will help you configure [ModelMapper](http://modelmapper.org) within the application context. 
 
 [![Build Status](https://travis-ci.org/jmnarloch/modelmapper-spring-boot-starter.svg?branch=master)](https://travis-ci.org/jmnarloch/modelmapper-spring-boot-starter)
+[![Coverage Status](https://coveralls.io/repos/jmnarloch/modelmapper-spring-boot-starter/badge.svg?branch=master&service=github)](https://coveralls.io/github/jmnarloch/modelmapper-spring-boot-starter?branch=master)
 
 ## Features
 
