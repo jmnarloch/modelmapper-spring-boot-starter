@@ -17,7 +17,7 @@ In order to add ModelMapper to your project simply add this dependency to your c
 <dependency>
     <groupId>com.github.jmnarloch</groupId>
     <artifactId>modelmapper-spring-boot-starter</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
@@ -61,6 +61,27 @@ public class UserDtoMapping extends PropertyMapConfigurerSupport<User, UserDto> 
    }
 }
   
+```
+
+AAdditionally custom ModelMapper's converters can be registered:
+
+```java
+
+@Component
+public class UserDtoConverter extends ConverterConfigurerSupport<User, UserDTO> {
+    @Override
+    protected Converter<User, UserDTO> converter() {
+        return new AbstractConverter<User, UserDTO>() {
+
+            @Override
+            protected UserDTO convert(User source) {
+                String[] parts = source.getName().split(" ");
+                return new UserDTO(parts[0], parts[1]);
+            }
+        };
+    }
+}
+
 ```
 
 
