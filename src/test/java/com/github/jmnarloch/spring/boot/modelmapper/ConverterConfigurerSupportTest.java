@@ -16,7 +16,7 @@
 package com.github.jmnarloch.spring.boot.modelmapper;
 
 import com.github.jmnarloch.spring.boot.modelmapper.domain.User;
-import com.github.jmnarloch.spring.boot.modelmapper.dto.UserDTO;
+import com.github.jmnarloch.spring.boot.modelmapper.dto.UserDto;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -56,7 +56,7 @@ public class ConverterConfigurerSupportTest {
         final User user = new User("John Doe");
 
         // when
-        final UserDTO result = modelMapper.map(user, UserDTO.class);
+        final UserDto result = modelMapper.map(user, UserDto.class);
 
         // then
         Assert.assertEquals("John", result.getFirstName());
@@ -67,16 +67,16 @@ public class ConverterConfigurerSupportTest {
     public static class Application {
 
         @Bean
-        public ConverterConfigurerSupport<User, UserDTO> userConverter() {
-            return new ConverterConfigurerSupport<User, UserDTO>() {
+        public ConverterConfigurerSupport<User, UserDto> userConverter() {
+            return new ConverterConfigurerSupport<User, UserDto>() {
                 @Override
-                protected Converter<User, UserDTO> converter() {
-                    return new AbstractConverter<User, UserDTO>() {
+                protected Converter<User, UserDto> converter() {
+                    return new AbstractConverter<User, UserDto>() {
 
                         @Override
-                        protected UserDTO convert(User source) {
+                        protected UserDto convert(User source) {
                             String[] parts = source.getName().split(" ");
-                            return new UserDTO(parts[0], parts[1]);
+                            return new UserDto(parts[0], parts[1]);
                         }
                     };
                 }

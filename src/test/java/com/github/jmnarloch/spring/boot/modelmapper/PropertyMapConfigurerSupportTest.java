@@ -16,7 +16,7 @@
 package com.github.jmnarloch.spring.boot.modelmapper;
 
 import com.github.jmnarloch.spring.boot.modelmapper.domain.User;
-import com.github.jmnarloch.spring.boot.modelmapper.dto.UserDTO;
+import com.github.jmnarloch.spring.boot.modelmapper.dto.UserDto;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -55,7 +55,7 @@ public class PropertyMapConfigurerSupportTest {
         final User user = new User("John Doe");
 
         // when
-        final UserDTO result = modelMapper.map(user, UserDTO.class);
+        final UserDto result = modelMapper.map(user, UserDto.class);
 
         // then
         Assert.assertEquals(user.getName(), result.getFirstName());
@@ -66,11 +66,11 @@ public class PropertyMapConfigurerSupportTest {
     public static class Application {
 
         @Bean
-        public PropertyMapConfigurerSupport<User, UserDTO> userMapping() {
-            return new PropertyMapConfigurerSupport<User, UserDTO>() {
+        public PropertyMapConfigurerSupport<User, UserDto> userMapping() {
+            return new PropertyMapConfigurerSupport<User, UserDto>() {
                 @Override
-                public PropertyMap<User, UserDTO> mapping() {
-                    return new PropertyMap<User, UserDTO>() {
+                public PropertyMap<User, UserDto> mapping() {
+                    return new PropertyMap<User, UserDto>() {
                         @Override
                         protected void configure() {
                             map().setFirstName(source.getName());

@@ -20,16 +20,16 @@ package com.github.jmnarloch.spring.boot.modelmapper.dto;
  *
  * @author Jakub Narloch
  */
-public class UserDTO {
+public class UserDto {
 
     private String firstName;
 
     private String lastName;
 
-    public UserDTO() {
+    public UserDto() {
     }
 
-    public UserDTO(String firstName, String lastName) {
+    public UserDto(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
