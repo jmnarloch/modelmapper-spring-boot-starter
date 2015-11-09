@@ -20,8 +20,9 @@ import com.github.jmnarloch.spring.boot.modelmapper.dto.UserDTO;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.modelmapper.AbstractConverter;
+import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.PropertyMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -31,13 +32,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.springframework.util.Assert.notNull;
 
 /**
- * Tests the {@link PropertyMapConfigurerSupport} class.
+ * Tests the {@link ConverterConfigurerSupport} class.
  *
  * @author Jakub Narloch
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PropertyMapConfigurerSupportTest.Application.class)
-public class PropertyMapConfigurerSupportTest {
+@SpringApplicationConfiguration(classes = ConverterConfigurerSupportTest.Application.class)
+public class ConverterConfigurerSupportTest {
 
     @Autowired
     private ModelMapper modelMapper;
@@ -58,23 +59,24 @@ public class PropertyMapConfigurerSupportTest {
         final UserDTO result = modelMapper.map(user, UserDTO.class);
 
         // then
-        Assert.assertEquals(user.getName(), result.getFirstName());
-        Assert.assertEquals(user.getName(), result.getLastName());
+        Assert.assertEquals("John", result.getFirstName());
+        Assert.assertEquals("Doe", result.getLastName());
     }
 
     @EnableAutoConfiguration
     public static class Application {
 
         @Bean
-        public PropertyMapConfigurerSupport<User, UserDTO> userMapping() {
-            return new PropertyMapConfigurerSupport<User, UserDTO>() {
+        public ConverterConfigurerSupport<User, UserDTO> userConverter() {
+            return new ConverterConfigurerSupport<User, UserDTO>() {
                 @Override
-                public PropertyMap<User, UserDTO> mapping() {
-                    return new PropertyMap<User, UserDTO>() {
+                protected Converter<User, UserDTO> converter() {
+                    return new AbstractConverter<User, UserDTO>() {
+
                         @Override
-                        protected void configure() {
-                            map().setFirstName(source.getName());
-                            map().setLastName(source.getName());
+                        protected UserDTO convert(User source) {
+                            String[] parts = source.getName().split(" ");
+                            return new UserDTO(parts[0], parts[1]);
                         }
                     };
                 }

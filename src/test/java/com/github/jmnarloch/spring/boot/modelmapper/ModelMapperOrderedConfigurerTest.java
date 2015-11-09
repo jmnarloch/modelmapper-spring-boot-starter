@@ -32,9 +32,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 import static org.springframework.util.Assert.notNull;
 
 /**
@@ -43,8 +40,8 @@ import static org.springframework.util.Assert.notNull;
  * @author Jakub Narloch
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = ModelMapperOrdererConfigurerTest.Application.class)
-public class ModelMapperOrdererConfigurerTest {
+@SpringApplicationConfiguration(classes = ModelMapperOrderedConfigurerTest.Application.class)
+public class ModelMapperOrderedConfigurerTest {
 
     @Autowired
     private ModelMapper modelMapper;
