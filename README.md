@@ -63,7 +63,7 @@ public class UserDtoMapping extends PropertyMapConfigurerSupport<User, UserDto> 
   
 ```
 
-AAdditionally custom ModelMapper's converters can be registered:
+Additionally custom ModelMapper's converters can be registered:
 
 ```java
 
