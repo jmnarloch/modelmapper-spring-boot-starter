@@ -44,7 +44,6 @@ public abstract class PropertyMapConfigurerSupport<S, D> implements ModelMapperC
      */
     @Override
     public void configure(ModelMapper modelMapper) {
-
         modelMapper.addMappings(mapping());
     }
 }
