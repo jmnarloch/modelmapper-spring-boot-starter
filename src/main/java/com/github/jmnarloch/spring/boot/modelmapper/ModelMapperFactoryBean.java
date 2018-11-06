@@ -79,9 +79,7 @@ public class ModelMapperFactoryBean implements FactoryBean<ModelMapper> {
      */
     private void configure(ModelMapper modelMapper) {
         if (configurers != null) {
-            for (ModelMapperConfigurer modelMapperConfigurer : configurers) {
-                modelMapperConfigurer.configure(modelMapper);
-            }
+            configurers.forEach(modelMapperConfigurer -> modelMapperConfigurer.configure(modelMapper));
         }
     }
 }

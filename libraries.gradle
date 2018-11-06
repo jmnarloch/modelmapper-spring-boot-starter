@@ -1,12 +1,9 @@
 ext {
 
     libraries = [
-            springBoot : 'org.springframework.boot:spring-boot-starter:1.2.5.RELEASE',
-            springBootTest : 'org.springframework.boot:spring-boot-starter-test:1.2.5.RELEASE',
+            springBoot : 'org.springframework.boot:spring-boot-starter:2.1.0.RELEASE',
+            springBootTest : 'org.springframework.boot:spring-boot-starter-test:2.1.0.RELEASE',
 
-            modelMapper : 'org.modelmapper:modelmapper:0.7.5',
-
-            junit        : 'junit:junit:4.12',
-            mockito      : 'org.mockito:mockito-all:1.10.19'
+            modelMapper : 'org.modelmapper:modelmapper:2.3.1'
     ]
 }

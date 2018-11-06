@@ -44,7 +44,6 @@ public abstract class ConverterConfigurerSupport<S, D> implements ModelMapperCon
      */
     @Override
     public void configure(ModelMapper modelMapper) {
-
         modelMapper.addConverter(converter());
     }
 }

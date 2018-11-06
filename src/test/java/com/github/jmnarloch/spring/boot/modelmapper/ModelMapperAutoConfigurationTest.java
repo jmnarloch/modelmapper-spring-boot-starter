@@ -20,9 +20,9 @@ import org.junit.runner.RunWith;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
@@ -36,8 +36,8 @@ import static org.springframework.util.Assert.notNull;
  *
  * @author Jakub Narloch
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = ModelMapperAutoConfigurationTest.Application.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE, classes = ModelMapperAutoConfigurationTest.Application.class)
 public class ModelMapperAutoConfigurationTest {
 
     @Autowired

@@ -38,7 +38,7 @@ task wrapper(type: Wrapper) {
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Spring Boot Starter for ModelMapper',
+        attributes 'Implementation-Title': 'Spring Boot 2 Starter for ModelMapper',
                    'Implementation-Version': version
     }
 }
@@ -57,8 +57,6 @@ dependencies {
     compile (libraries.modelMapper)
 
     testCompile (libraries.springBootTest)
-    testCompile (libraries.junit)
-    testCompile (libraries.mockito)
 }
 
 findbugs {
