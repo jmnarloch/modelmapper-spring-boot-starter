@@ -23,7 +23,8 @@ apply plugin: 'pmd'
 
 apply plugin: 'com.github.kt3k.coveralls'
 
-sourceCompatibility = 1.7
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 group = "com.github.jmnarloch"
 archivesBaseName="modelmapper-spring-boot-starter"
